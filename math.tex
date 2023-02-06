@@ -1,0 +1,50 @@
+% !TEX root = keeping-up.tex
+
+%%
+\section{Math}
+\label{sec:math}
+
+\everymath{\displaystyle}
+
+There are multiple environments to define math equations. The must common environment is to use 
+\$ \$ as in-line math formulas that you can use, common to list sub indexes $x_1, x_2, \ldots , x_n$.
+
+%%%%
+\subsection{Equations}
+
+Equations are defined by the \spy{equation} environment. Equations are numbered (if you do not want numbers, use * at the end of the word. This is a common convention in \LaTeX), and can be referenced as \fref{eq:quadratic}
+
+\begin{equation} \label{eq:quadratic}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+
+Unnumbered equations can also be created using the quick equation environment, generating a math mode between \spy{\[} and \spy{\]}.
+
+\[
+Q_t(a) := \frac{\sum\limits^{t-1}_{i=1} r_t \mathbbm{1}_{a_t=a}}{\sum\limits_{i=1}^{t-1} \mathbbm{1}_{a_t=a}} 
+\]
+
+\[
+\mathbbm{1}_{a_t} = \begin{cases}
+       1 & \quad \text{si se escoge } a \\
+       0 & \quad \text{si no se escoge } a \\
+     \end{cases}
+\]
+
+%%%%
+\subsection{Alignment}
+
+\begin{align*}
+f(u) & =\sum\limits_{j=1}^{n^2+1} x_jf(u_j)&\\
+     & =\sum_{j=1}^{n} x_j \sum_{i=1}^{m} a_{ij}v_i&\\
+     & =\sum_{j=1}^{n} \sum_{i=1}^{m} a_{ij}x_jv_i
+\end{align*}
+
+\begin{flalign}
+f(u) & =\sum\limits_{j=1}^{n^2+1} x_jf(u_j)&\\
+     & =\sum_{j=1}^{n} x_j \sum_{i=1}^{m} a_{ij}v_i&\\
+     & =\sum_{j=1}^{n} \sum_{i=1}^{m} a_{ij}x_jv_i
+\end{flalign}
+
+
+\endinput

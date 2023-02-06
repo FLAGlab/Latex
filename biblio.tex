@@ -1,0 +1,26 @@
+% !TEX root = keeping-up.tex
+
+
+%%
+\section{Bibliography management}
+\label{sec:biblio}
+
+Bibliographies are manages by the bibtex package/specification. This will let us manage bibliographic references with ease, by defining them in a shorthand way, as in the \spy{local.bib} file, as shown in \fref{lst:bib} for the definition of a reference \cite{golendukhina22}.
+
+\begin{lstlisting}[frame=lines, 
+   label={lst:bib}, 
+  caption={Bib entry example}]
+@inproceedings{golendukhina22,
+	author = {Valentina Golendukhina and Valentina Lenarduzzi and Michael Felderer},
+	booktitle = {International Conference on AI Engineering - Software Engineering for AI},
+	pages = {1--9},
+	series = {CAIN'22},
+	title = {What is Software Quality for AI Engineers? Towards a Thinning of the Fog},
+	year = {2022}}
+\end{lstlisting}
+
+References are \textbf{NOT} text objects, therefore you should never do something like citing the code in \cite{islam20}. Instead you have to use the natbib package and the \spy{citet} command to display the authors' names as in \citet{islam20}.
+
+Yo can play with the parameters of the biblatex package to programmatically modify bib entries and style.
+
+\endinput

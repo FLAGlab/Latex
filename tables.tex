@@ -1,0 +1,28 @@
+% !TEX root = keeping-up.tex
+
+
+%%
+\section{Tables}
+\label{sec:tables}
+
+Tables are floating elements like figures, their definition follows the environment definition like in 
+\fref{tab:multi}.
+Tables should always use a meaningful description and be referenced in the text. Usually captions for tables appear at the top of the table. 
+
+\begin{table}
+  \centering
+  \caption{Table with multirow and multicolumns definitions}
+  \input{tables/known}
+  \label{tab:multi}
+\end{table}
+
+Tables can be defined in many different ways, one particularly good one is to use book (looking) tables, formatting the table with the least amount of visual elements not to distract away from the table's content
+
+\begin{table}
+  \centering
+  \caption{Table using p columns}
+  \input{tables/codeforces}
+  \label{tab:p-table}
+\end{table}
+
+\endinput

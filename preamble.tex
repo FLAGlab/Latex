@@ -1,0 +1,245 @@
+
+
+%% Package declaration
+\usepackage[T1]{fontenc}  %font encodings (accents)
+\usepackage[utf8]{inputenc}  %encodings of the input (accents)
+%typesetting
+\usepackage{amsmath}   %most mathematical features
+\usepackage{amssymb}  % math symbols
+\usepackage{mathrsfs}    % math mode script letters
+\usepackage{yfonts}        % german fonts
+\usepackage{bbm}           % math thick style for numbers
+%referencing
+\usepackage{hyperref}      %enable hyperreferences in text
+\usepackage[plain]{fancyref}                   %managing references for text elements automatically
+%enumerations
+\usepackage[inline]{enumitem}   % enable inline enumerations
+%Images
+\usepackage{subcaption}               %enable caption for subfigures
+\usepackage[version=0.96]{pgf}
+\usepackage{tikz}                           %Programmatically-defined figures
+
+%Listings
+\usepackage[final]{listings}  %Code snippet definition
+%Tables
+\usepackage{booktabs}       %Book style definition of tables
+\usepackage{multirow}        % enable multirow definitions within a table
+%additional useful libraries
+\usepackage{xcolor,colortbl}  %Definition of colors
+\usepackage{xspace}             %Add spaces to commands
+\usepackage{suffix}                % Suffix definition of commands
+\usepackage{etoolbox}           %Programatic tools
+\usepackage{acronym}           %Acronym definition
+\usepackage{url}                     %Hyperlink urls
+\usepackage{ifdraft}                %Introduction of conditionals
+%Bibliography
+\usepackage[backend=biber,
+   style=ieee,
+   citestyle=numeric-comp,
+   natbib=true,
+   maxnames=7,
+   minnames=1,
+   maxcitenames=1, 
+   mincitenames=1,
+   giveninits=true,
+   hyperref=true,
+   sorting=none,
+   defernumbers]{biblatex}
+   
+\addbibresource{local.bib}
+
+
+%\AtEveryBibitem{%
+%   \clearlist{address}
+%   \clearfield{date}
+%   \clearfield{doi}
+%   \clearfield{eprint}
+%   \clearfield{isbn}
+%   \clearfield{issn}
+%   \clearfield{month}
+%   \clearfield{note}
+%   \clearfield{arxivId}
+%   \clearfield{pages}
+%   \clearfield{volume}
+%   \clearfield{number}
+%   \clearlist{location}
+%   \clearfield{series}
+%   \clearfield{url}
+%   \clearname{editor}
+%   \ifentrytype{inproceedings}
+%     {\clearfield{day}
+%      \clearfield{month}
+%      \clearfield{volume}}{}
+%}
+%
+%\DeclareFieldFormat*{title}{\textsl{#1}\isdot}
+%\DeclareFieldFormat*{journaltitle}{#1}
+%\DeclareFieldFormat*{booktitle}{#1}
+%
+%\renewcommand{\bibfont}{\footnotesize}
+%\renewbibmacro{in:}{} % supress 'In: ' form
+%\renewbibmacro{ser.}{} % supress 'ser.: ' form
+%
+%\DeclareSourcemap
+% {\maps[datatype=bibtex,overwrite]
+%   {% Tag entries (through keywords)
+%    \map
+%      {\step[fieldsource=publisher,
+%       match=\regexp{Association for Computing Machinery}, replace={ACM}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Pp]roceedings}, replace={Proc.}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Ii]nternational}, replace={Intl.}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Cc]onference}, replace={Conf.}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Ff]oundation[s]}, replace={Found.}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Ss]oftware}, replace={Soft.}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Ee]ngineering}, replace={Eng.}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Ss]ymposium}, replace={Symp.}]}
+%    \map
+%      {\step[fieldsource=journal,
+%       match=\regexp{[Jj]ournal}, replace={Jour.}]}
+%    \map
+%      {\step[fieldsource=journal,
+%       match=\regexp{[Ii]nternational}, replace={Intl.}]}
+%    \map
+%      {\step[fieldsource=journal,
+%       match=\regexp{[Aa]pplications}, replace={Apps.}]}
+%    \map
+%      {\step[fieldsource=journal,
+%       match=\regexp{[Ss]ystems}, replace={Sys.}]}
+%    \map
+%      {\step[fieldsource=journal,
+%       match=\regexp{[Tt]ransactions}, replace={Trans.}]}
+%    \map
+%      {\step[fieldsource=journal,
+%       match=\regexp{[Aa]utonomous and Adaptive Systems}, replace={Auton. Adapt. Syst.}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Pp]roceedings\s+of\s+the.+[Ee]uropean\s+[Cc]onference\s+in}, replace={European Conf. in}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{In\s+[Pp]roceedings\s+of\s+the\s+[Ss]ymposium\s+on}, replace={Symp. on}]}
+%     \map
+%      {\step[fieldsource=publisher,
+%       match=\regexp{[Aa]ssociation\s+for\s+[Cc]omputing\s+[Mm]achinery\s}, replace={ACM}]}
+%     \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Pp]roceedings\s+of\s+the\s+[Ii]nternational\s+[Cc]onference\s+on}, replace={Intl. Conf. on}]}
+%    \map
+%      {\step[fieldsource=booktitle,
+%       match=\regexp{[Pp]roceedings\s+of\s+the\s+[Ii]nternational\s+[Ww]orkshop\s+on}, replace={Intl. Workshop on}]}}}   
+
+% fancyref
+\def\fref{\Fref} % treat all \frefs as \Frefs
+\renewcommand{\lstlistingname}{Snippet}
+\newcommand*{\fancyreflstlabelprefix}{lst} % define lst delimiter
+\newcommand*{\Freflstname}{\lstlistingname}
+\newcommand*{\freflstname}{\lstlistingname}
+\Frefformat{vario}{\fancyreflstlabelprefix}%
+  {\Freflstname\fancyrefdefaultspacing#1#3}
+\frefformat{vario}{\fancyreflstlabelprefix}%
+  {\freflstname\fancyrefdefaultspacing#1#3}
+\Frefformat{plain}{\fancyreflstlabelprefix}%
+  {\Freflstname\fancyrefdefaultspacing#1}
+\frefformat{plain}{\fancyreflstlabelprefix}%
+  {\freflstname\fancyrefdefaultspacing#1}
+  
+\newcommand*{\fancyreflnlabelprefix}{ln} % define ln delimiter
+\newcommand*{\Freflnname}{Line}%
+\newcommand*{\freflnname}{%
+ \MakeLowercase{\Freflnname}}%
+\Frefformat{vario}{\fancyreflnlabelprefix}%
+  {\Freflnname\fancyrefdefaultspacing#1#3}
+\frefformat{vario}{\fancyreflnlabelprefix}%
+  {\freflnname\fancyrefdefaultspacing#1#3}
+\Frefformat{plain}{\fancyreflnlabelprefix}%
+  {\Freflnname\fancyrefdefaultspacing#1}
+\frefformat{plain}{\fancyreflnlabelprefix}%
+  {\freflnname\fancyrefdefaultspacing#1}
+
+
+% listings
+
+\lstset{%
+  basicstyle=\footnotesize\ttfamily,
+  aboveskip=0\baselineskip,
+  belowskip=0\baselineskip,
+  commentstyle=\scriptsize\itshape,
+%  prebreak=\mbox{$\hookleftarrow$},
+  breaklines,
+  numberblanklines=false,
+  numberstyle=\tiny\color{gray}, 
+  numbersep=0pt,
+  escapechar=`,  
+  numberbychapter=false}
+  
+\lstdefinestyle{floating}
+ {frame=lines,
+  float=hptb,
+  captionpos=b,
+  abovecaptionskip=-0pt}
+
+% context traits listings
+\lstdefinestyle{py}
+ {language=Python,
+  showstringspaces=false,
+  keywordstyle=\ttfamily\bfseries\color{magenta},
+  tabsize=2,
+  style=floating,
+  belowskip=-0\baselineskip,
+  aboveskip=-0\baselineskip,
+  morekeywords={}
+}
+
+%context traits environment    
+\lstnewenvironment{python}[1][]
+ {\lstset{style=py,#1}}{}  
+
+ %in line source-code
+\newcommand{\spy}[1]{\lstinline[style=py]{#1}}
+
+%comments
+% xcolor
+\definecolor{author}{rgb}{.5, .5, .5}
+\definecolor{comment}{rgb}{.1, .0, .9}
+\definecolor{note}{rgb}{.9, .4, .0}
+\definecolor{idea}{rgb}{.1, .7, .0}
+\definecolor{missing}{rgb}{.9, .1, .0}
+\definecolor{OliveGreen}{rgb}{0,0.6,0.3}
+
+
+
+\newcommand{\authorcomment}[3][comment]
+  {\ifdraft{\noindent
+      \fbox{\footnotesize\textcolor{author}{\textsc{#2}}}
+      \textcolor{#1}{\textsl{#3}}}{}}
+
+
+%----[ Commands ]---
+
+%shortenings
+\newcommand{\my}{\textsc{My Tool}\xspace}
+\newcommand{\js}{JavaScript\xspace}
+
+%Latins
+\newcommand{\eg}{\emph{e.g.,}\xspace}
+\newcommand{\ie}{\emph{i.e.,}\xspace}
+\newcommand{\cf}{\emph{cf.}\xspace}
+
+% Sets
+\renewcommand{\emptyset}{\varnothing} % Redefine LaTeX version with AMS version
+
+   
+\endinput

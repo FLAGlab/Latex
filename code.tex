@@ -1,0 +1,24 @@
+% !TEX root = keeping-up.tex
+
+
+%%
+\section{Code Snippets}
+\label{sec:code}
+
+Code Snippets are defined by the listings package. Snippets are floating elements, which can be formatted tailored to a specific programming language. \fref{lst:python} shows an example of the custom environment for Python code
+
+\begin{python}[numbers=left, frame=lines, 
+   label={lst:python}, 
+  caption={Python code example}]
+class Dog:   `\label{ln:class} `
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"woof-woof. I'm {self.name}")
+\end{python}
+
+Inline code environment can also be defined to add them to text paragraphs, as referring to the \spy{class Dog} definition in \fref{ln:class}.
+
+\endinput

@@ -1,0 +1,112 @@
+% !TEX root = keeping-up.tex
+
+
+%%
+\section{\TeX~ and \LaTeX}
+
+\LaTeX uses plain-text format to write documents. That means is that what you write on the editor, will be exactly as what you will see on the document output
+
+Latex documents are structured in \emph{chapters}, \emph{sections}, \emph{subsections}, \emph{subsubsections}, and \emph{paragraphs}.
+
+\begin{itemize}
+\item \textbf{Chapters} are the top level structure for books, usually starting a new page on the righthand side
+\item \textbf{Sections} (like this) are the top level structure of chapters
+\item \textbf{Subsection} are further divisions of sections (\cf \fref{sec:enums})
+\item \textbf{Subsubsections} are the inner-most division of sections
+\item \textbf{Paragraphs} are used to add a division (usually not numbered)
+\end{itemize}
+
+All structure environments, and in general all environments can be referenced. References take place by means of a tag (\ie a \spy{label}) and its call cite (\ie a \spy{ref} command)
+
+%%%%
+\subsection{Enumerations}
+\label{sec:enums}
+
+There are three types of enumerations in latex, 
+
+%%%%%%
+\subsubsection{Bullets}
+
+Bullets are defined by the \spy{itemize} environment. Each bullet defined by an \spy{item}. Sub-bullets are defined by nesting itemize environments
+
+\begin{itemize}
+\item First
+\begin{itemize}
+\item Sub-first
+\end{itemize}
+\item Second
+\end{itemize}
+
+
+%%%%%%
+\subsubsection{Enumerations}
+
+Enumerations work just as bullets but are numbered. Enumerations are defined by the \spy{enumerate} environment and can be nested
+
+\begin{enumerate}
+\item First
+\begin{enumerate}
+\item Sub-first
+\end{enumerate}
+\item Second
+\end{enumerate}
+
+%%%%%%
+\subsubsection{In-line enumerations}
+
+In-line enumerations correspond to enumerations that do not break text flow, but rather follow it.
+You can define in-line enumerations with the \spy{enumerate*} command, given the items any kind of identifier.
+
+%%%%%%%%
+\paragraph{Example} 
+In-line enumerations follow by default the style of the document class
+\begin{enumerate*}
+\item First, in-line, and 
+\item Second in-line
+\end{enumerate*}
+
+%%%%%%%%
+\paragraph{Custom} 
+You can customize in-line enumerations (and in general any kind of enumeration item, by adding the options to the environment
+\begin{enumerate*}[label=(\arabic*)]
+\item First, in-line, and 
+\item Second in-line
+\end{enumerate*}
+
+
+%%%%
+\subsection{Descriptions}
+\label{sec:descriptions}
+
+
+Descriptions follow the same environment rules as enumerations, but items are defined as strings rather than bullets or numbers
+
+\begin{description}
+  \item{Item label} An example description with a larger text to make the point on the way it is displayed. This will change as you change the environment options, or the item definition
+\end{description}
+
+You can also customize the way the description is displayed
+\begin{description}[labelindent=1cm]
+  \item[Item label] An example description with a larger text to make the point on the way it is displayed. This will change as you change the environment options, or the item definition. Using square brackets to bold the item label \authorcomment[note]{NC}{Adding comments for peer writing}
+\end{description}
+
+
+%%%%
+\subsection{Acronyms and shorthands}
+\label{sec:acrosnyms}
+
+Acronyms can be used to easy writing, and to track common acronyms automatically. For example if we want to talk about \acp{LOC} when analyzing \ac{OOP}. One used, an acronym automatically prints:
+\begin{enumerate}
+  \item its short form \ac{OOP}
+  \item its long form \acl{OOP}
+  \item its full form \acf{OOP}
+  \item its plural form \acp{OOP}
+\end{enumerate}
+
+Finally, acronyms can also have special forms defined between square brackets as in the case for the \ac{IOT}. 
+
+Other way to optimize writing is by defining commands that expand to more complex text. This is of particular usefulness for double blinded submissions. For example writing \js or the latin shorthands \ie, \eg, \cf are common cases of shorthands.
+
+
+
+\endinput

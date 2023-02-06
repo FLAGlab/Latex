@@ -1,0 +1,8 @@
+*.log
+*.gz
+*.bcf
+*.aux
+keeping-up.pdf
+*.blg
+*.bbl
+keeping-up.run.xml
