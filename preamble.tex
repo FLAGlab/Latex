@@ -25,8 +25,8 @@
 \usepackage{booktabs}       %Book style definition of tables
 \usepackage{multirow}        % enable multirow definitions within a table
 %additional useful libraries
-\usepackage{xcolor,colortbl}  %Definition of colors
 \usepackage{xspace}             %Add spaces to commands
+\usepackage{xcolor,colortbl}  %Definition of colors
 \usepackage{suffix}                % Suffix definition of commands
 \usepackage{etoolbox}           %Programatic tools
 \usepackage{acronym}           %Acronym definition
@@ -210,6 +210,25 @@
  %in line source-code
 \newcommand{\spy}[1]{\lstinline[style=py]{#1}}
 
+
+%% Equations
+\usepackage[export]{adjustbox}
+\usetikzlibrary{positioning,shadows,trees,mindmap}
+\usetikzlibrary{arrows, shapes, backgrounds}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{shapes.misc}
+\usepackage[edges]{forest}
+\usetikzlibrary{arrows.meta}
+\colorlet{linecol}{black!75}
+\usepackage{xkcdcolors} % xkcd colors
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+% Commands for Highlighting text -- non tikz method
+\newcommand{\highlight}[2]{\colorbox{#1!17}{#2}}
+%\newcommand{\highlight}[2]{\colorbox{#1!17}{$#2$}}
+\newcommand{\highlightdark}[2]{\colorbox{#1!47}{#2}}
+
+
 %comments
 % xcolor
 \definecolor{author}{rgb}{.5, .5, .5}
@@ -218,6 +237,9 @@
 \definecolor{idea}{rgb}{.1, .7, .0}
 \definecolor{missing}{rgb}{.9, .1, .0}
 \definecolor{OliveGreen}{rgb}{0,0.6,0.3}
+\definecolor{Bittersweet}{rgb}{0.996,0.435,0.369}
+\definecolor{RoyalBlue}{rgb}{0.25,0.41,0.88}
+\definecolor{Mulberry}{rgb}{0.77,0.29,0.54}
 
 
 

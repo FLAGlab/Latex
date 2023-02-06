@@ -1,0 +1,67 @@
+
+\begin{equation*} \label{eq:QL}
+\scriptstyle
+    Q(s_{t+1},\, a_{t+1}) \leftarrow  
+    {\tikzmarknode{qt}{\highlight{purple}{$Q(s_t, a_t)$}}} +
+    {\tikzmarknode{alpha}{\highlight{blue}{$\alpha$}}}
+    [ 
+    {\tikzmarknode{r}{\highlight{Bittersweet}{$r_{t+1}$}}}  +  
+    {\tikzmarknode{gamma}{\highlight{RoyalBlue}{$\gamma$}}}
+    {\tikzmarknode{max}{\highlight{OliveGreen}{$\max\limits_a Q(s_{t+1},a)$}}} - 
+    {\tikzmarknode{qt2}{\highlight{purple}{$Q(s_t, a_t)$}}} 
+    ]
+\end{equation*}
+
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+    % For "Qt1"
+    \path (qt.north) ++ (3.7,1.6em) node[anchor=south east,color=Mulberry!85] (ntext){\textsf{\footnotesize Q-value}};
+    \draw [color=Mulberry](qt.north) |- ([xshift=0.8ex,color=Mulberry]ntext.south west);
+    \path (qt2.north) ++ (-1.2,1.6em) node[anchor=south east,color=Mulberry!85] (qt2text){};
+    \draw [color=Mulberry](qt2.north) |- ([xshift=-4.9ex,color=Mulberry]qt2text.south west);
+    % For alpha
+    \path (alpha.north) ++ (-0.2,-2.8em) node[anchor=south east,color=blue!85] (atext){\textsf{\footnotesize learning rate}};
+    \draw [color=blue](alpha.south) |- ([xshift=-9.3ex,color=blue]atext.south east);
+    % For r
+    \path (r.north) ++ (-0.1,1.5em) node[anchor=north east,color=Bittersweet!85] (lijtext){\textsf{\footnotesize reward}};
+    \draw [color=Bittersweet](r.north) |- ([xshift=-4.3ex,color=Bittersweet]lijtext.south east);
+    %gamma
+    \path (gamma.north) ++ (0.5,1.5em) node[anchor=north west,color=RoyalBlue!85] (gtext){\textsf{\footnotesize discount factor}};
+    \draw [color=RoyalBlue](gamma.north) |- ([xshift=-2.9ex,color=RoyalBlue]gtext.south east);
+    % For "l_i^max"
+    \path (max.north) ++ (-1.2,-3.6em) node[anchor=south west,color=xkcdHunterGreen!85] (lmaxtext){\textsf{\scriptsize Maximum Q-Value in the next state}};
+    \draw [color=xkcdHunterGreen](max.south) |- ([xshift=-5ex,color=xkcdHunterGreen]lmaxtext.north);
+\end{tikzpicture}
+
+
+
+
+\endinput
+
+\hfil
+
+\begin{minipage}{0.5\columnwidth}
+\begin{equation*}
+    \label{eq:ab_crypto}
+    \hspace*{-6em}
+    X_{i} = \frac{1}{\sum_{i=1}^{\tikzmarknode{n}{\highlight{purple}{N}}} 
+    \sum_{j=1}^{\tikzmarknode{mi}{\highlight{blue}{$M_i$}}} 
+    \tfrac{\tikzmarknode{lij}{\highlight{Bittersweet}{$l_i^j$}}}{\tikzmarknode{lmax}{\highlight{OliveGreen}{$l^{max}$}}}
+    }
+\end{equation*}
+\vspace*{0.8\baselineskip}
+\begin{tikzpicture}[overlay,remember picture,>=stealth,nodes={align=left,inner ysep=1pt},<-]
+    % For "N"
+    \path (n.north) ++ (0,1.8em) node[anchor=south east,color=Plum!85] (ntext){\textsf{\footnotesize number of objects}};
+    \draw [color=Plum](n.north) |- ([xshift=-0.3ex,color=Plum]ntext.south west);
+    % For "M_i"
+    \path (mi.north) ++ (0,3.5em) node[anchor=north west,color=blue!85] (mitext){\textsf{\footnotesize number of other objects}};
+    \draw [color=blue](mi.north) |- ([xshift=-0.3ex,color=blue]mitext.south east);
+    % For "l_i^j"
+    \path (lij.north) ++ (0,1.9em) node[anchor=north west,color=Bittersweet!85] (lijtext){\textsf{\footnotesize size of j\textsuperscript{th} service}};
+    \draw [color=Bittersweet](lij.north) |- ([xshift=-0.3ex,color=Bittersweet]lijtext.south east);
+    % For "l_i^max"
+    \path (lmax.north) ++ (-2.7,-1.5em) node[anchor=north west,color=xkcdHunterGreen!85] (lmaxtext){\textsf{\footnotesize maximum obj size}};
+    \draw [color=xkcdHunterGreen](lmax.south) |- ([xshift=-0.3ex,color=xkcdHunterGreen]lmaxtext.south west);
+\end{tikzpicture}
+\end{minipage}
+\caption{Two Equations side-by-side using minipage and figure constructs.}
